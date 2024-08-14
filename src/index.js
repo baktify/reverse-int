@@ -1,7 +1,13 @@
 module.exports = function reverse(number) {
-    let result = `${number}`;
+    let isNegative = number < 0;
 
-    result = result.split("").reverse().join("");
+    let result = String(number);
 
-    return result / 1;
+    result = [...result];
+
+    if (isNegative) result.splice(0, 1);
+
+    result = result.reverse().join("");
+
+    return Number(result);
 };
